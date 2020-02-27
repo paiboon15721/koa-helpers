@@ -2,7 +2,12 @@ exports.formatOutput = async (ctx, next) => {
   try {
     await next()
     const contentType = ctx.response.header['content-type']
-    if (contentType && contentType.indexOf('json') < 0) return
+    if (
+      contentType &&
+      contentType.indexOf('json') < 0 &&
+      contentType.indexOf('plain') < 0
+    )
+      return
     if (ctx.status === 404 || ctx.status === 204) {
       const error = 'Not Found'
       ctx.body = {
