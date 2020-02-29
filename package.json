@@ -1,6 +1,6 @@
 {
   "name": "koa-helpers",
-  "version": "1.0.1",
+  "version": "1.0.7",
   "description": "helpers for koa",
   "main": "index.js",
   "scripts": {
